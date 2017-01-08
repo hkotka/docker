@@ -20,9 +20,15 @@ services:
       - IPC_LOCK
     volumes:
       - esdata:/usr/share/elasticsearch/data
-    expose:
-      - 9200
+    ports:
+      - 9200:9200
+    networks: 
+      - esnet
 
 volumes:
   esdata:
     driver: local
+
+networks:
+  esnet:
+    driver: bridge
