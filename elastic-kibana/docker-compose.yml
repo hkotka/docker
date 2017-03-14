@@ -28,7 +28,7 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:5.2.2
     environment:
-      ELASTICSEARCH_URL: http://elasticsearch1:9200
+      ELASTICSEARCH_URL: http://elasticsearch:9200
     networks:
       - esnet
     ports: 
