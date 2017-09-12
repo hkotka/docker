@@ -1,0 +1,11 @@
+version: '2'
+services:
+  nginx:
+    image: nginx:stable
+    volumes:
+      - ./ssl/:/etc/ssl/:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
+    command: [nginx, '-g' , 'daemon off;']
+    restart: on-failure
+# Set host mode networking for native network performance
+    network_mode: host
